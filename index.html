@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Daniel Bielejeski</title>
+    <title>Daniel Bielejeski | Home</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/foundation.css">
@@ -10,44 +10,37 @@
 </head>
 
 <body>
-    <div class="title-bar">
-        <div class="title-bar-left">
-          <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
-          <span class="title-bar-title">Daniel Bielejeski</span>
-        </div>
-      </div>
-
-    <div class="grid-x grid-margin-x">
-        <div class="cell small-12">
-            <div class="off-canvas-wrapper">
-                <div class="off-canvas-absolute position-left" id="offCanvasLeft" data-off-canvas>
-                    <!-- Close button -->
-                    <button class="close-button" aria-label="Close menu" type="button" data-close>
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-    
-                    <!-- Menu -->
-                    <ul class="vertical menu">
+    <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;"></div>
+    <div class="top-bar" id="responsive-menu">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu id="top-menu-bar">
+                <li>
+                    <a>Daniel Bielejeski</a>
+                    <ul class="menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="project.html">Projects</a></li>
                         <li><a href="resume.html">Resume</a></li>
                         <li><a href="fun.html">Fun!</a></li>
                     </ul>
-                </div>
-                <div class="off-canvas-content" style="min-height: 300px;" data-off-canvas-content>
-                    <p>I have nothing to do with the off-canvas on the right!</p>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
+    </div>
+    <div class="grid-container content">
+        <div class="cell large-12 center">
+            This is a test of the grid class
+        </div>
+    </div>
+    <!-- include before closing </body> tag -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/foundation.js"></script>
+    <script type="application/javascript">
+        $(document).foundation();
+    </script>
 </body>
 
-<!-- include before closing </body> tag -->
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/vendor.js"></script>
-<script src="js/foundation.js"></script>
-<script type="application/javascript">
-    $(document).foundation();
-</script>
+
 
 </html>
