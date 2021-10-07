@@ -9,27 +9,94 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="resume">
     <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
-    <div class="top-bar" id="responsive-menu">
-        <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu id="top-menu-bar">
-                <li>
-                    <a>Daniel Bielejeski</a>
-                    <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="project.html">Projects</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="fun.html">Fun!</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="top-bar" id="responsive-menu">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu id="top-menu-bar">
+                    <li>
+                        <a>Daniel Bielejeski | Projects</a>
+                        <ul class="menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="project.html">Projects</a></li>
+                            <li><a href="resume.html">Resume</a></li>
+                            <li><a href="fun.html">Fun!</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    </div>
     <div class="grid-container content">
-        <div class="cell large-12 center">
-            This is a test of the grid class
+        <div class="grid-x">
+            <div class="cell large-5">
+                <h1 class="show-for-medium" style="margin-left:13rem; margin-top:1rem">Pearson Vue Internship</h1>
+                <img class="show-for-medium" src="img/largertesting.jpg" alt="testing" style="margin-left:10rem"/>
+            </div>
+            
+            <div class="cell small-12 large-7">
+                <h1 class="hide-for-medium center" style="font-size:1.5em"> Pearson Vue Internship</h1>
+                <img class="hide-for-medium" src="img/testing.jpg" alt="testing" style="margin-left:1em; margin-right:1em;"/>
+                <p style="margin-top: 5%;">
+                    &emsp;In September 2020, I started working for Pearson Vue as a Software Engineering Intern on their Desktop
+                   testing platform. I did not realize how much I would learn in the months that followed. I was thrown head first
+                   into the software development world. There was a steep learning curve at first, it took the first three or so 
+                   months to even feel comfortable doing my job. I started out working on various production defects. This gave
+                   me the opportunity to familiarize myself with the codebase and become comfortable with the software.
+                   <br/> 
+                    &emsp;After several months of working on defects, some easy, some exceedingly difficult, I graduated to feature work.
+                    This had a learning curve of its own, but I quickly learned the ropes. Working for Pearson has had
+                    ups and downs, every now and then I will be stuck on a defect or story for what feels like forever, but 
+                    the feeling that comes with solving a difficult problem never goes away. I am very grateful for what I 
+                    have been able to learn working for Pearson.
+                </p>
+            </div>
+        </div>
+        <div class="grid-x">
+            <div class="cell large-5">
+                <h1 class="show-for-medium" style="margin-left:13rem; margin-top:1rem">Hug the Angry Jarvis</h1>
+                <img class="show-for-medium" src="img/angryjarvis.png" alt="testing" style="margin-left:13rem"/>
+            </div>
+            
+            <div class="cell small-12 large-7">
+                <h1 class="hide-for-medium center" style="font-size:1.5em"> Hug the Angry Jarvis</h1>
+                <img class="hide-for-medium" src="img/smallangryjarvis.png" alt="testing" style="margin-left:1em; margin-right:1em;"/>
+                <p style="margin-top: 5%;">
+                    &emsp;Hug the Angry Jarvis was my final project in CISC 230 (Object Oriented Programming). The goal of the game is 
+                    to find and hug the Angry Jarvis. The Jarvis moves randomly about the board and occasionally drops 'homework traps.'
+                    The player can move in any direction on the grid, trying to dodge homework traps and find the Jarvis. If a player hits
+                    a home work trap, they have a 5 second delay before they can move again. Once a player
+                    has been in a square, that square is then visible, meaning the Jarvis will be seen if he enters that square. The game
+                    can be made more difficult by increasing the board size or the Jarvis difficulty.
+                    <br/>
+                    &emsp;I remember this assigment very clearly. It was the culmination of all the learning from that semester. 
+                    I took CISC 230 with Dr. Sawin. While Sawin is very intense at times, I learned so much, a lot of which I use
+                    in my every day life. Object Oriented was one of my favorite classes and this project was my favorite by far!
+                </p>
+            </div>
+        </div>
+        <div class="grid-x">
+            <div class="cell large-5">
+                <h1 class="show-for-medium" style="margin-left:13rem; margin-top:1rem">TommieCoin Wallet</h1>
+                <img class="show-for-medium" src="img/crypto-wallets.jpg" alt="testing" style="margin-left:10rem"/>
+            </div>
+            
+            <div class="cell small-12 large-7">
+                <h1 class="hide-for-medium center" style="font-size:1.5em"> TommieCoin Wallet</h1>
+                <img class="hide-for-medium" src="img/smallcrypto-wallets.jpg" alt="testing" style="margin-left:1em; margin-right:1em;">
+                <p style="margin-top:5%">
+                &emsp; My favorite project of all time was creating a crypto currency wallet for the fake cryptocurrency "TommieCoin"
+                in Advanced Information Security(CISC 410). The design was pretty open-ended, there were a few requirements, namely, the wallet
+                had to be able to access the amount of coins it had, it had to be able to send coins, and finally it had to be able to mine coins. It 
+                had to be written in Python, but beyond that, the rest of the design was up to me!
+                <br/>
+                &emsp;I greatly enjoyed being able to build my own program. It was really fun to go through the design
+                process. It took many iterations to finally get it working well, but once it was done it worked great! There 
+                were many occasions during the coding that I realized that I should have done something differently, so I would
+                go back and change it. This process ended up making my code a lot cleaner in the end. It was also fun to see
+                the wallet function as a finished project, I would definitely do something similar again!
+                </p>
+            </div>
         </div>
     </div>
     <!-- include before closing </body> tag -->

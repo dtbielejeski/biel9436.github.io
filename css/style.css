@@ -1,7 +1,5 @@
 html {
     font-size: 20px;
-    
-    
 }
 
 body {
@@ -15,6 +13,7 @@ body {
 .grid-container {
     padding-left: 0%;
     padding-right: 0%;
+    max-width: 100%;
 }
 .resume h1 {
     font-size: 2rem;
@@ -27,12 +26,12 @@ body {
 .center {
     text-align: center;
 }
-.pictures{
+.pictures {
     display:block;
-    margin-right: 1em;
-    margin-left: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-right: 1%;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
     border-radius: 50%;
 }
 
