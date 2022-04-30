@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Daniel Bielejeski - About</title>
+		<title>Daniel Bielejeski - Hug the Angry Jarvis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,7 +23,7 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="active">About</a></li>
+						<li><a href="index.html" >About</a></li>
 						<li><a href="project1.html">TommieCoin</a></li>
 						<li><a href="project2.html">Hug the Angry Jarvis</a></li>
 						<li><a href="project3.html">Additional Project</a></li>
@@ -46,11 +46,11 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="images/header.jpg" alt="" />
+									<img src="images/Hug the Angry Jarvis.png" alt="tommie coin header" />
 								</div>
 								<div class="container">
 									<header class="major">
-										<h2>About Me</h2>
+										<h2>About the Project</h2>
 									</header>
 									<p>&emsp;Hello there! Thanks for stopping by. My name is Daniel Bielejeski, I am a current senior at
 										the University of St. Thomas studying Computer Science and Philosophy. Computer Science runs in the family,
@@ -69,10 +69,63 @@
 
 						<!-- Two -->
 							<section id="two">
-								<div class="container">
-									<h3>Resume</h3>
-    								<iframe src="images/resume4-10-22.pdf" width="100%" height="500px">
-    								</iframe>
+								<div class="container">	
+									<h3>Project Code</h3>	
+									<script>
+										function openCode(cityName) {
+											var i;
+											var x = document.getElementsByClassName("city");
+											for (i = 0; i < x.length; i++) {
+												x[i].style.display = "none";
+											}
+											document.getElementById(cityName).style.display = "block";
+										}
+									</script>
+									<div>
+										<button class="button" onclick="openCode('Board')">Board</button>
+										<button class="button" onclick="openCode('Boardable')">Boardable</button>
+										<button class="button" onclick="openCode('Direction')">Direction</button>
+										<button class="button" onclick="openCode('Game')">Game</button>
+										<button class="button" onclick="openCode('HomeworkTrap')">HomeworkTrap</button>
+										<button class="button" onclick="openCode('Jarvis')">Jarvis</button>
+										<button class="button" onclick="openCode('Mobile')">Mobile</button>
+										<button class="button" onclick="openCode('Player')">Player</button>
+								
+									</div>
+									<div id="Board" class="city">
+										<iframe src="code/Board.java" width="100%" height="500px">
+										</iframe>
+									</div>
+								
+									<div id="Boardable" class="city" style="display:none">
+										<iframe src="code/Boardable.java" width="100%" height="500px">
+										</iframe>
+									</div>
+								
+									<div id="Direction" class="city" style="display:none">
+										<iframe src="code/Direction.java" width="100%" height="500px">
+										</iframe>
+									</div>
+									<div id="Game" class="city" style="display:none">
+										<iframe src="code/Game.java" width="100%" height="500px">
+										</iframe>
+									</div>
+									<div id="HomeworkTrap" class="city" style="display:none">
+										<iframe src="code/HomeworkTrap.java" width="100%" height="500px">
+										</iframe>
+									</div>
+									<div id="Jarvis" class="city" style="display:none">
+										<iframe src="code/Jarvis.java" width="100%" height="500px">
+										</iframe>
+									</div>
+									<div id="Mobile" class="city" style="display:none">
+										<iframe src="code/Mobile.java" width="100%" height="500px">
+										</iframe>
+									</div>
+									<div id="Player" class="city" style="display:none">
+										<iframe src="code/Player.java" width="100%" height="500px">
+										</iframe>
+									</div>
 								</div>
 							</section>
 <!-- 
@@ -231,7 +284,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 											</div>
 										</div>
 									</section>
-
+								
 									<section>
 										<h4>Table</h4>
 										<h5>Default</h5>

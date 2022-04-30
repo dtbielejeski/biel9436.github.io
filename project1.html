@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Daniel Bielejeski - About</title>
+		<title>Daniel Bielejeski - TommieCoin</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,7 +23,7 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="active">About</a></li>
+						<li><a href="index.html">About</a></li>
 						<li><a href="project1.html">TommieCoin</a></li>
 						<li><a href="project2.html">Hug the Angry Jarvis</a></li>
 						<li><a href="project3.html">Additional Project</a></li>
@@ -46,11 +46,11 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="images/header.jpg" alt="" />
+									<img src="images/TommieCoin.png" alt="" />
 								</div>
 								<div class="container">
 									<header class="major">
-										<h2>About Me</h2>
+										<h2>About the Project</h2>
 									</header>
 									<p>&emsp;Hello there! Thanks for stopping by. My name is Daniel Bielejeski, I am a current senior at
 										the University of St. Thomas studying Computer Science and Philosophy. Computer Science runs in the family,
@@ -70,9 +70,48 @@
 						<!-- Two -->
 							<section id="two">
 								<div class="container">
-									<h3>Resume</h3>
-    								<iframe src="images/resume4-10-22.pdf" width="100%" height="500px">
-    								</iframe>
+									<h3>Project Code</h3>	
+									<script>
+										function openCode(cityName) {
+											var i;
+											var x = document.getElementsByClassName("city");
+											for (i = 0; i < x.length; i++) {
+												x[i].style.display = "none";
+											}
+											document.getElementById(cityName).style.display = "block";
+										}
+									</script>
+									<div>
+										<button class="button" onclick="openCode('TommieServer')">TommieServer</button>
+										<button class="button" onclick="openCode('TommieUtils')">TommieUtils</button>
+										<button class="button" onclick="openCode('Transactions')">Transactions</button>
+										<button class="button" onclick="openCode('Wallet')">Wallet</button>
+										<button class="button" onclick="openCode('CurrentChain')">CurrentChain</button>
+								
+									</div>
+									<div id="TommieServer" class="city">
+										<iframe src="code/tommieserver.txt" width="100%" height="500px">
+										</iframe>
+									</div>
+								
+									<div id="TommieUtils" class="city" style="display:none">
+										<iframe src="code/tommieutils.txt" width="100%" height="500px">
+										</iframe>
+									</div>
+								
+									<div id="Transactions" class="city" style="display:none">
+										<iframe src="code/transactions.txt" width="100%" height="500px">
+										</iframe>
+									</div>
+									<div id="Wallet" class="city" style="display:none">
+										<iframe src="code/wallet.txt" width="100%" height="500px">
+										</iframe>
+									</div>
+									<div id="CurrentChain" class="city" style="display:none">
+										<iframe src="code/currchain.txt" width="100%" height="500px">
+										</iframe>
+									</div>
+								</div>
 								</div>
 							</section>
 <!-- 
