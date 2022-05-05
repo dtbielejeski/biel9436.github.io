@@ -11,8 +11,10 @@ import tommieutils as tu
 import copy
 import time
 
+# The current users in the system
 listnames = ["Alice", "Bob", "Carlos", "Dawn", "Eve"]
 
+# A generic pay transaction
 emptyPayTrans = {
     'transtype' : '1',
     'ins' : [],
@@ -20,6 +22,7 @@ emptyPayTrans = {
     'sigs' : []
 }
 
+# A Generic mine transaction
 emptyMinedTrans = {
     'prevmine' : '',
     'transtype' : '2',
@@ -28,6 +31,9 @@ emptyMinedTrans = {
     'timestamp':''
 }
 
+"""
+Launches the text based wallet
+"""
 def main(argv):
     global username
     username = argv[0].split("pk.txt")[0].capitalize()
@@ -56,6 +62,10 @@ def main(argv):
     return
 
 
+"""
+Calculates the number of TommieCoins a user currently has
+Prints that number to the console
+"""
 def account_details(userPublicKey):
     numCoins = calculate_num_coins(userPublicKey)
     if (numCoins == 1):
@@ -64,6 +74,12 @@ def account_details(userPublicKey):
         print("You currently have %s TommieCoins." %numCoins)
 
 
+"""
+Creates a pay transaction between two users
+Name: the name of the current user
+userPrivateKey: the private key of the current user
+userPublicKey: the public key of the user to be paid
+"""
 def pay_transaction(name, userPrivateKey, userPublicKey):
     correctname = False
     listnames.remove(name)
@@ -95,6 +111,11 @@ def pay_transaction(name, userPrivateKey, userPublicKey):
     listnames.append(name)
 
 
+"""
+Creates a mining transaction
+Name: the name of the current user
+userPublicKey: the public key of the user to be paid if the mine is successful
+"""
 def mine_transaction(name, userPublicKey):
     block_chain_request = requests.get('http://127.0.0.1:8080/showchainraw')
     block_chain = json.loads(block_chain_request.text)
@@ -106,12 +127,13 @@ def mine_transaction(name, userPublicKey):
     minetrans['nonce'] = str(nonce)
     send_mine_transaction(minetrans)
 
-
+# Sends the mine transactions to the server
 def send_mine_transaction(minetrans):
     minestr = json.dumps(minetrans, sort_keys=True)
     requests.post('http://127.0.0.1:8080/addtrans', data={'trans':minestr})
 
 
+# Finds the nonce required for the transaction
 def find_nonce(minetrans):
     nonce = -1
     minehash = ''
@@ -120,6 +142,10 @@ def find_nonce(minetrans):
         minehash = tu.sha256(str(nonce) + tu.sha256(json.dumps(minetrans, sort_keys=True)))
     return nonce
 
+"""
+Returns the last mined block on the blockchain
+chain: the current block chain
+"""
 def findLastMined(chain):
     numblocks = len(chain['blocks'])
     i = numblocks-1
@@ -129,6 +155,14 @@ def findLastMined(chain):
         i -= 1
     return i
 
+
+"""
+Builds a pay transactions requested by the user
+recipientPublicKey: the public key of the recipient
+amount: the amount to send
+userPrivateKey: the private key of the sender
+userPublicKey: the public key of the sender
+"""
 def build_pay_transaction(recipientPublicKey, amount, userPrivateKey, userPublicKey):
     block_chain_request = requests.get('http://127.0.0.1:8080/showchainraw')
     block_chain = json.loads(block_chain_request.text)
@@ -146,18 +180,20 @@ def build_pay_transaction(recipientPublicKey, amount, userPrivateKey, userPublic
         paytrans['sigs'] = [{'pk':getUserPublicKey(username), 'signature': tu.sign(userPrivateKey, json.dumps(paytrans, sort_keys=True))}]
         return paytrans
 
-
+# Sends the pay transaction to the server
 def send_pay_transaction(paytrans):
     paystr = json.dumps(paytrans, sort_keys=True)
     requests.post('http://127.0.0.1:8080/addtrans', data={'trans':paystr})
 
 
+# Returns the value of the coins
 def removeValue(coins):
     for coin in coins:
         coin.pop('value')
     return coins
 
 
+# Gets the out lists from the transactions
 def get_outs(coins, recipientPK, userPK, amount):
     sumcoins = sum_coins(coins)
     remainder = int(sumcoins) - int(amount)
@@ -165,6 +201,7 @@ def get_outs(coins, recipientPK, userPK, amount):
     return outs
 
 
+# Determines the best coin to send
 def determine_best_coins(valid_coin_indices, amount):
     curValue = 0
     coins = []
@@ -176,6 +213,7 @@ def determine_best_coins(valid_coin_indices, amount):
     return coins
 
 
+# Finds the largest coin in the list
 def findGreatestCoin(coins):
     curGreatestCoin = coins[0]
     curGreatestValue = int(curGreatestCoin['value'])
@@ -185,14 +223,14 @@ def findGreatestCoin(coins):
             curGreatestValue = int(curGreatestCoin['value'])
     return coins.index(curGreatestCoin)
 
-
+# Gets the public key associated with the name
 def getUserPublicKey(name):
     userPublicKeyFile = "./keys/" + name.lower() + "pk.txt"
     userPublicKeyFile = open(userPublicKeyFile, "r")
     userPublicKey = userPublicKeyFile.read()
     return userPublicKey
 
-
+# Gets the private key associated with the name
 def getUserPrivateKey(name):
     userPrivateKeyFile = "./keys/" + name.lower() + "sk.txt"
     userPrivateKeyFile = open(userPrivateKeyFile, "r")
@@ -200,6 +238,7 @@ def getUserPrivateKey(name):
     return userPrivateKey
 
 
+#Calculates teh number of coins a user has
 def calculate_num_coins(userPublicKey):
     block_chain_request = requests.get('http://127.0.0.1:8080/showchainraw')
     block_chain = json.loads(block_chain_request.text)
@@ -207,7 +246,7 @@ def calculate_num_coins(userPublicKey):
     valid_coins = determine_valid_coins(all_recieved_coins, block_chain, userPublicKey)
     return sum_coins(valid_coins)
 
-
+# Determines what coins in a list are valid
 def determine_valid_coins(receivedcoins, block_chain, userPublicKey):
     coinindices = []
     usedcoins = getAllUsedCoins(block_chain)
@@ -228,7 +267,7 @@ def determine_valid_coins(receivedcoins, block_chain, userPublicKey):
         coinindices.remove(pair)
     return coinindices
 
-
+# Gets all the recieved coins for a user on the blockchain
 def get_all_received_coins(block_chain, userPublicKey):
     usedcoins = getAllUsedCoins(block_chain)
     all_recieved_coins = []
@@ -240,14 +279,14 @@ def get_all_received_coins(block_chain, userPublicKey):
                 all_recieved_coins.append(block)
     return all_recieved_coins
 
-
+# Determines the sum of the coins
 def sum_coins(coinindices):
     sum = 0
     for index in coinindices:
         sum += index['value']
     return sum
 
-
+# Gets all the used coins from the blockchain
 def getAllUsedCoins(chain):
     used = []
     for block in chain['blocks']:
@@ -257,6 +296,6 @@ def getAllUsedCoins(chain):
             used.extend(currins)
     return used
 
-
+# Standard main call
 if __name__ == "__main__":
     main(sys.argv[1:])
