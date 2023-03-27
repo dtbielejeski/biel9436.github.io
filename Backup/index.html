@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Daniel Bielejeski - Hug the Angry Jarvis</title>
+		<title>Daniel Bielejeski - About</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,9 +23,9 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" >About</a></li>
+						<li><a href="index.html" class="active">About</a></li>
 						<li><a href="project1.html">TommieCoin</a></li>
-						<li><a href="project2.html" class="active">Hug the Angry Jarvis</a></li>
+						<li><a href="project2.html">Hug the Angry Jarvis</a></li>
 						<li><a href="project3.html">Into the Bobiverse</a></li>
 					</ul>
 				</nav>
@@ -46,102 +46,42 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="images/Hug the Angry Jarvis.png" alt="tommie coin header" />
+									<img src="images/header.jpg" alt="" />
 								</div>
 								<div class="container">
 									<header class="major">
-										<h2>About the Project</h2>
+										<h2>About Me</h2>
 									</header>
-									<p>&emsp;I created this project for my second computer science class: 
-										CISC 230: Object Oriented Design. It is a text based, Java game,
-										where the players goal is to find and hug the angry computer science
-										teacher, Dr. Jarvis. This was the final project we
-										did for the class and incorporated many aspects of what we had learned that semester.
-										It combined basic object oriented design concepts such as polymorphism and inheritance
-										with more complicated aspects such as multithreading. Although this project was from 
-										one of the earlier computer science course it remains one of my favorites. It taught
-										me a lot about Java and object oriented design in general.
-										<br>
-										&emsp;The game is played entirely in the console. The keys QWEASDZXC are used to control movement.
-										The board is represented by a grid of 10x10 #'s. As the player moves, the #'s are removed from the board.
-										The goal is to find the Angry Jarvis represented by the '?'. The Jarvis moves randomly around
-										the board laying homework traps as he moves. If the player hits a homework trap he cannot
-										move for 5 seconds. Once the player and the Jarvis are in the same space the Jarvis is soother
-										and the game ends. Below you can see a short 
-										video of the game being played. Enjoy!
-									</p>
-									    
-								</div>
-							</section>
-
-							<section id="two">
-								<div class="container">
-									<header class="major">
-										<h2>Demo</h2>
-										<iframe src="images/hugtheangryjarvis.mp4" width="100%" height="500px">
+									<p>&emsp;Hello there! Thanks for stopping by. My name is Daniel Bielejeski, I am a current senior at
+										the University of St. Thomas studying Computer Science and Philosophy. Computer Science runs in the family,
+										I, my dad, and two of my brothers all work in the field. I always assumed that I could pick it up
+										quickly and during my first class I fell in love with it! Why Philosophy you ask? Philosophy has always
+										been an interest of mine, I love to ponder the questions it asks and the thinking it requires. It also is 
+										a good preparation for my other passion: law. <br/>
+										&emsp;Computer Science and Law do not seem related at first, but once you dive deeper they share more than you expect.
+										Both require attention to detail, creative thinking, and problem solving. How I think about computer science 
+										problems is the same as I think about about law issues. After college I will be working full time for Pearson VUE.
+										I plan on working in the software development field for several years before deciding if I want to enter 
+										law school. </p>
+									    <iframe src="images/danielbielejeskiintro.mp4" width="100%" height="500px">
 										</iframe>
 								</div>
 							</section>
 
 						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<h3>Resume</h3>
+    								<iframe src="images/resume4-10-22.pdf" width="100%" height="500px">
+    								</iframe>
+								</div>
+							</section>
+
 							<section id="three">
-								<div class="container">	
-									<h3>Project Code</h3>	
-									<script>
-										function openCode(cityName) {
-											var i;
-											var x = document.getElementsByClassName("city");
-											for (i = 0; i < x.length; i++) {
-												x[i].style.display = "none";
-											}
-											document.getElementById(cityName).style.display = "block";
-										}
-									</script>
-									<div>
-										<button class="button" onclick="openCode('Board')">Board</button>
-										<button class="button" onclick="openCode('Boardable')">Boardable</button>
-										<button class="button" onclick="openCode('Direction')">Direction</button>
-										<button class="button" onclick="openCode('Game')">Game</button>
-										<button class="button" onclick="openCode('HomeworkTrap')">HomeworkTrap</button>
-										<button class="button" onclick="openCode('Jarvis')">Jarvis</button>
-										<button class="button" onclick="openCode('Mobile')">Mobile</button>
-										<button class="button" onclick="openCode('Player')">Player</button>
-								
-									</div>
-									<div id="Board" class="city">
-										<iframe src="code/Board.java" width="100%" height="500px">
-										</iframe>
-									</div>
-								
-									<div id="Boardable" class="city" style="display:none">
-										<iframe src="code/Boardable.java" width="100%" height="500px">
-										</iframe>
-									</div>
-								
-									<div id="Direction" class="city" style="display:none">
-										<iframe src="code/Direction.java" width="100%" height="500px">
-										</iframe>
-									</div>
-									<div id="Game" class="city" style="display:none">
-										<iframe src="code/Game.java" width="100%" height="500px">
-										</iframe>
-									</div>
-									<div id="HomeworkTrap" class="city" style="display:none">
-										<iframe src="code/HomeworkTrap.java" width="100%" height="500px">
-										</iframe>
-									</div>
-									<div id="Jarvis" class="city" style="display:none">
-										<iframe src="code/Jarvis.java" width="100%" height="500px">
-										</iframe>
-									</div>
-									<div id="Mobile" class="city" style="display:none">
-										<iframe src="code/Mobile.java" width="100%" height="500px">
-										</iframe>
-									</div>
-									<div id="Player" class="city" style="display:none">
-										<iframe src="code/Player.java" width="100%" height="500px">
-										</iframe>
-									</div>
+								<div class="container">
+									<h3>Reflection</h3>
+    								<iframe src="images/reflection.pdf" width="100%" height="500px">
+    								</iframe>
 								</div>
 							</section>
 <!-- 
@@ -300,7 +240,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 											</div>
 										</div>
 									</section>
-								
+
 									<section>
 										<h4>Table</h4>
 										<h5>Default</h5>
